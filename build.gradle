@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'org.sonarqube' version '3.3'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+test {
+    useJUnit()
+}
+
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'Main.java'
+        property 'sonar.projectKey', 'Your project key'
+        property 'sonar.host.url', 'http://localhost:9000' // Replace with your SonarQube server URL
+    }
+}
